@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Code Breakers - Projeto Mobile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-red: #dc3545;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVBAR OTIMIZADA --- */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.95);
+            border-bottom: 2px solid var(--primary-red);
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        
+        .navbar-collapse {
+            background-color: #000;
+            padding: 15px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://placehold.co/800x1200/333/dc3545?text=Robo+Vertical'); 
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* --- CARDS & INTERFACE --- */
+        .section-title {
+            border-left: 5px solid var(--primary-red);
+            padding-left: 15px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 15px;
+            height: 100%;
+        }
+
+        /* --- CARROSSEL --- */
+        .carousel-item img {
+            height: 350px; /* Altura ideal para ver detalhes no celular */
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        @media (min-width: 768px) {
+            .carousel-item img {
+                height: 500px;
+            }
+        }
+
+        .member-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .btn-custom {
+            background-color: var(--primary-red);
+            color: white;
+            border-radius: 50px;
+            padding: 12px 35px;
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        section {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+    </style>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">CODE <span class="text-danger">BREAKERS</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item"><a class="nav-link py-3" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link py-3" href="#specs">Hardware</a></li>
+                    <li class="nav-item"><a class="nav-link py-3" href="#galeria">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link py-3" href="#equipe">Equipe</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <span class="badge bg-danger mb-3">Projeto Senac 2025</span>
+            <h1 class="display-3 fw-bold mb-3">Veículo Desvia Obstáculo</h1>
+            <p class="lead mb-4 text-light opacity-75">Automação com Arduino e Sensores Ultrassônicos.</p>
+            <div class="d-grid gap-2 d-md-block">
+                <a href="#galeria" class="btn btn-custom">Ver Fotos</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="sobre" class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-12 col-md-6 order-2 order-md-1">
+                <h2 class="section-title">O Projeto</h2>
+                <p class="text-secondary-light">O Code Breakers é um veículo autônomo que utiliza lógica de programação e sensores físicos para navegar em ambientes reais.</p>
+                <div class="d-grid gap-2 mt-4">
+                    <a href="https://bit.ly/FLUXO-CB" class="btn btn-outline-light btn-lg"><i class="fas fa-project-diagram me-2"></i> Fluxograma </a>
+                    <a href="https://bit.ly/GANTT-CDB" class="btn btn-outline-light btn-lg"><i class="fas fa-tasks me-2"></i> Cronograma</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 order-1 order-md-2 text-center">
+                <div class="card bg-dark border-secondary mb-4">
+                <div class="card-body text-center p-0">
+                    <model-viewer 
+                        src="./Chassi.gltf" 
+                        alt="Modelo 3D do Code Breakers"
+                        auto-rotate 
+                        camera-controls 
+                        ar
+                        shadow-intensity="1"
+                        style="width: 100%; height: 400px; background-color: #1e1e1e;">
+                        
+                        <div slot="poster" style="display:flex; justify-content:center; align-items:center; height:100%; color:white;">
+                            <i class="fas fa-cube fa-3x"></i>
+                            <span class="ms-2" style="color: #ffffff;">Toque para carregar 3D</span>
+                        </div>
+                    </model-viewer>
+                </div>
+                <div class="card-footer text-muted small text-center">
+                    <i class="fas fa-hand-pointer"></i> Toque e arraste para girar o chassi
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="container">
+        <h2 class="section-title">Galeria</h2>
+        <p class="small text-muted mb-3"><i class="fas fa-hand-pointer"></i> Deslize para ver mais</p>
+        
+        <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
+            
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="https://placehold.co/800x600/000000/dc3545?text=Robo+no+Ambiente+Externo" class="d-block w-100" alt="Robô Externo">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded">
+                        <h5>Testes de Campo</h5>
+                        <p>Validação dos sensores em ambiente real.</p>
+                    </div>
+                </div>
+                
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="https://placehold.co/800x600/000000/dc3545?text=Desenho+Tecnico+Chassi" class="d-block w-100" alt="Desenho Técnico">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded">
+                        <h5>Engenharia</h5>
+                        <p>Projeto do chassi para corte a laser.</p>
+                    </div>
+                </div>
+                
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="https://placehold.co/800x600/000000/dc3545?text=Montagem+Eletronica" class="d-block w-100" alt="Montagem">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded">
+                        <h5>Hardware</h5>
+                        <p>Montagem dos componentes e bateria 21V.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev d-none d-md-flex" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next d-none d-md-flex" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </section>
+
+    <section id="equipe" class="container pb-5">
+        <h2 class="section-title">Equipe Code Breakers</h2>
+        <div class="row">
+            <div class="col-12 mb-3">
+                <div class="member-card d-flex align-items-center p-3">
+                    <div class="bg-danger rounded-circle p-3 me-3 text-white fw-bold">NL</div>
+                    <div>
+                        <h5 class="m-0">Nicolas Lopes </h5>
+                        <small class="text-danger">Gestão & Hardware</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-3">
+                <div class="member-card d-flex align-items-center p-3">
+                    <div class="bg-secondary rounded-circle p-3 me-3 text-white fw-bold">CM</div>
+                    <div>
+                        <h5 class="m-0">Cassiano Marcon</h5>
+                        <small class="text-danger">Programação</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-3">
+                <div class="member-card d-flex align-items-center p-3">
+                    <div class="bg-secondary rounded-circle p-3 me-3 text-white fw-bold">YB</div>
+                    <div>
+                        <h5 class="m-0">Yrieh Brino</h5>
+                        <small class="text-danger">Design 3D</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4 border-top border-secondary">
+        <p class="mb-0 text-white">&copy; 2025 Code Breakers</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const modelViewer = document.querySelector("model-viewer");
+
+        modelViewer.addEventListener("load", () => {
+            // Procura o material do chassi (geralmente é o primeiro ou tem nome específico)
+            const material = modelViewer.model.materials[0]; 
+            
+            // Define a cor base: [Vermelho, Verde, Azul, ALFA/OPACIDADE]
+            // O último número é a transparência (0.0 a 1.0). 
+            // 0.3 = 30% visível (bem transparente)
+            material.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 0.2]);
+            
+            // Define que o material deve aceitar transparência
+            material.setAlphaMode('BLEND');
+        });
+    </script>
+</body>
+</html>

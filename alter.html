@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Breakers - Veículo Autônomo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-red: #dc3545;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+        }
+        body {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.9);
+            border-bottom: 2px solid var(--primary-red);
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('caminho-para-foto-do-robo.jpg'); /* COLOQUE A FOTO PRINCIPAL AQUI */
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .section-title {
+            border-left: 5px solid var(--primary-red);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .feature-card {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            height: 100%;
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-red);
+        }
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .member-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .member-header {
+            background-color: var(--primary-red);
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid var(--primary-red);
+        }
+        .btn-custom {
+            background-color: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            font-weight: bold;
+        }
+        .btn-custom:hover {
+            background-color: #bb2d3b;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">CODE <span class="text-danger">BREAKERS</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#specs">Especificações</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#equipe">Equipe</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Veículo Desvia-Obstáculo</h1>
+            <p class="lead">Projeto autônomo desenvolvido com Arduino e Tecnologia de Sensores</p>
+            <a href="#galeria" class="btn btn-custom mt-3">Ver o Robô em Ação</a>
+        </div>
+    </header>
+
+    <section id="sobre" class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="section-title">O Projeto</h2>
+                <p>O Code Breakers é um veículo autônomo capaz de percorrer trajetórias e desviar de obstáculos sem intervenção humana. Desenvolvido no Senac, o projeto integra eletrônica, programação em C++ e modelagem 3D.</p>
+                <p>A arquitetura utiliza um microcontrolador Arduino integrado a um Shield L293D e sensores ultrassônicos, garantindo baixa latência na detecção de barreiras.</p>
+                <div class="mt-4">
+                    <a href="https://bit.ly/FLUXO-CB" target="_blank" class="btn btn-outline-light me-2"><i class="fas fa-project-diagram"></i> Fluxograma</a>
+                    <a href="https://bit.ly/GANTT-CDB" target="_blank" class="btn btn-outline-light"><i class="fas fa-tasks"></i> Gantt</a>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="https://placehold.co/500x300/1e1e1e/dc3545?text=Render+3D+do+Chassi" alt="Chassi 3D" class="img-fluid rounded border border-secondary">
+            </div>
+        </div>
+    </section>
+
+    <section id="specs" class="container py-5">
+        <h2 class="section-title">Ficha Técnica</h2>
+        <div class="row g-4">
+            <div class="col-md-3 col-6">
+                <div class="feature-card text-center">
+                    <i class="fas fa-microchip fa-3x text-danger mb-3"></i>
+                    <h5>Cérebro</h5>
+                    <p class="small">Arduino UNO R3</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="feature-card text-center">
+                    <i class="fas fa-car-battery fa-3x text-danger mb-3"></i>
+                    <h5>Energia</h5>
+                    <p class="small">Bateria 21V 6000mAh + Regulador</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="feature-card text-center">
+                    <i class="fas fa-satellite-dish fa-3x text-danger mb-3"></i>
+                    <h5>Visão</h5>
+                    <p class="small">Ultrassônico HC-SR04</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="feature-card text-center">
+                    <i class="fas fa-cogs fa-3x text-danger mb-3"></i>
+                    <h5>Tração</h5>
+                    <p class="small">Motor Shield L293D + 4 Motores DC</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-5 bg-dark">
+        <div class="container">
+            <h2 class="section-title text-center">Galeria do Projeto</h2>
+            <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://placehold.co/1200x500/000000/dc3545?text=Foto+do+Robo+Final+(Lateral)" class="d-block w-100" alt="Robô Final">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                            <h5>Versão Final</h5>
+                            <p>O veículo montado com chassi em acrílico e cabeamento organizado.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://placehold.co/1200x500/000000/dc3545?text=Desenho+Tecnico+do+Chassi" class="d-block w-100" alt="Desenho Técnico">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                            <h5>Engenharia e Design</h5>
+                            <p>Modelagem técnica e corte a laser do chassi.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://placehold.co/1200x500/000000/dc3545?text=Detalhe+da+Eletronica" class="d-block w-100" alt="Eletrônica">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                            <h5>Hardware</h5>
+                            <p>Integração do Arduino, Shield e Reguladores de Tensão.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://placehold.co/1200x500/000000/dc3545?text=Testes+em+Campo" class="d-block w-100" alt="Testes">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                            <h5>Testes e Validação</h5>
+                            <p>O robô em funcionamento em ambiente externo.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipe" class="container py-5">
+        <h2 class="section-title">Membros e Funções</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="member-card h-100">
+                    <div class="member-header">
+                        <h5 class="m-0 fw-bold">Nicolas Lopes</h5>
+                        <small>Gestão e Execução Física</small>
+                    </div>
+                    <div class="px-3">
+                        <p class="small text-muted">Planejamento, Orçamento, Corte do Chassi e Montagem.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="member-card h-100">
+                    <div class="member-header">
+                        <h5 class="m-0 fw-bold">Cassiano Marcon</h5>
+                        <small>Programação e Doc.</small>
+                    </div>
+                    <div class="px-3">
+                        <p class="small text-muted">Programação do Arduino (C++) e Documentação Técnica.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="member-card h-100">
+                    <div class="member-header">
+                        <h5 class="m-0 fw-bold">Yrieh Brino</h5>
+                        <small>Design e Simulação</small>
+                    </div>
+                    <div class="px-3">
+                        <p class="small text-muted">Modelagem 3D, Fluxogramas, Solda e Simulações.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="mb-0">&copy; 2025 Code Breakers Team | Senac</p>
+        <small class="text-muted">Desenvolvido para fins educacionais.</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
